@@ -1,0 +1,36 @@
+.movieCard {
+  height: 60vh;
+  width: min-content;
+  border: 2px solid grey;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px grey;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.movieCard #title {
+  font-weight: bold;
+  word-break: word-break;
+  margin: 0;
+}
+
+.movieCard #year {
+  font-style: italic;
+  margin: 0;
+}
+
+#viewMore {
+  border: 2px solid black;
+  border-radius: 3px;
+  box-shadow: 4px 4px 4px grey;
+  width: max-content;
+}
+
+@media only screen and (max-width: 600px) {
+  .movieCard {
+    padding: 2px 2px;
+    height: max-content;
+    margin-bottom: 5vh;
+    width: auto;
+  }
+}

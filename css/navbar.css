@@ -1,0 +1,13 @@
+.navbar .navbar-nav > li {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.navbar .navbar-nav > li > a {
+  color: white;
+  font-size: 18px;
+}
+
+.navbar .navbar-nav > li > a:hover {
+  color: grey;
+}
