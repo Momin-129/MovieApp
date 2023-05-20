@@ -27,13 +27,8 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            Signup
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            Signin
+          <a class="nav-link" href="../html/login.html">
+            Signup/Signin
           </a>
         </li>
       </ul>

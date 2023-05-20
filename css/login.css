@@ -1,0 +1,32 @@
+#login .col-md-4,
+.col-md-8 {
+  height: 80vh;
+  padding: 15px 15px;
+}
+
+#login .col-md-4 {
+  display: flex;
+}
+
+#login #logSin {
+  box-shadow: 5px 5px 5px grey;
+}
+
+#login .btn-light,
+.btn-dark {
+  width: 100%;
+  margin-left: 5px;
+}
+
+.signForm {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #login .col-md-4 {
+    display: none;
+  }
+  body {
+    padding: 15px 15px;
+  }
+}

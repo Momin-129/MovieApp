@@ -1,8 +1,11 @@
 import { fetchMovies } from "./fetchMovies.js";
 import { showMovies } from "./showMovies.js";
 
-const movieName = "Batman";
+let movieName = "";
 
-fetchMovies(movieName).then((data) => {
-  showMovies(data);
+$("#search").on("keyup", (e) => {
+  movieName = e.target.value;
+  fetchMovies(movieName).then((data) => {
+    showMovies(data);
+  });
 });
