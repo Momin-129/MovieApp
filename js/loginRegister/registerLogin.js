@@ -1,28 +1,53 @@
-function Register() {
+import { submitData } from "./submitData.js";
+
+export function Register() {
   let users = JSON.parse(localStorage.getItem("users")) ?? [];
-  let userId = 0;
-  if (localStorage.getItem("userId")) {
-    userId = parseInt(localStorage.getItem("userId"));
-  }
+  let username = $("#sigUsername");
+  let email = $("#sigEmail");
+  let password = $("#sigpswd");
+  let msg = "<span id='msg'></span>";
 
-  const regForm = document.querySelector("#sigForm");
-  const formData = new FormData(regForm);
-  let obj = {};
-  obj = Object.fromEntries(formData);
-  console.log(userId);
+  let validName = true,
+    validEmail = true,
+    error = false,
+    validPassword = true;
 
-  if (userId == 0) {
-    obj.userId = 1;
-    localStorage.setItem("userId", 2);
+  if ($(username).next().text() == "*Username not available.") {
+    validName = false;
+  } else validName = true;
+
+  users.forEach((element) => {
+    if (element.email == $(email).val()) {
+      error = true;
+    }
+  });
+
+  if (error) {
+    validEmail = false;
+    if ($(email).next().attr("id") == undefined) {
+      $(email).after(msg);
+    }
+    $(email).next().text("*Email id already exists.");
+    $(email).next().css("color", "red");
   } else {
-    obj.userId = userId;
-    userId++;
-    localStorage.setItem("userId", userId);
+    validEmail = true;
+    if ($(email).next().attr("id") == "msg") {
+      $(email).next().text("");
+    }
   }
 
-  users.push(obj);
-  localStorage.setItem("users", JSON.stringify(users));
-  regForm.reset();
+  if ($(password).val().length < 8) {
+    validPassword = false;
+    if ($(password).next().attr("id") == undefined) {
+      $(password).after(msg);
+    }
+    $(password).next().text("*password must be of 8 characters.");
+    $(password).next().css("color", "red");
+  } else {
+    validPassword = true;
+    if ($(password).next().attr("id") == "msg") {
+      $(password).next().text("");
+    }
+  }
+  if (validName && validEmail && validPassword) submitData();
 }
-
-export { Register };

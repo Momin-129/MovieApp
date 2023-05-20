@@ -8,14 +8,16 @@
   display: flex;
 }
 
+.row {
+  box-shadow: 15px 15px 15px grey;
+}
+
 #login #buttons {
   background-color: #008ee6;
-  box-shadow: 5px 5px 5px grey;
 }
 
 #login #logSin {
   background-color: #008ee6;
-  box-shadow: 5px 5px 5px grey;
 }
 
 #login .btn-light,
@@ -24,9 +26,10 @@
   margin-left: 5px;
 }
 
-#error {
+#msg {
   font-size: 12px;
   display: block;
+  font-weight: bold;
 }
 
 .signForm {
