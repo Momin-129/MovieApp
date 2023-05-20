@@ -26,6 +26,11 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             About
           </a>
         </li>
+        <li class="nav-item" id="favouriteList">
+          <a class="nav-link"  href="#">
+            Favourites
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="../html/login.html">
             Signup/Signin
@@ -35,3 +40,6 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     </div>
   </div>
 </nav>`);
+
+if (sessionStorage.getItem("sessionId") == null)
+  document.getElementById("favouriteList").style.display = "none";

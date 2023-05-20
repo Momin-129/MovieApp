@@ -5,7 +5,12 @@ export function showMovies(data) {
     $("#mainContainer").append("<div class='row mt-5'>");
     $("#mainContainer").append("</div>");
     let row = $("#mainContainer").children().last();
+    let src = "";
     for (let eachRecord in movies) {
+      if (movies[eachRecord]["Poster"] == "N/A")
+        src = "../../images/default.png";
+      else src = movies[eachRecord]["Poster"];
+
       $(row).append('<div class="col-md-4 mt-5">');
       $(row).append("</div>");
       let col = $(row).children().last();
@@ -14,7 +19,7 @@ export function showMovies(data) {
       let movieCard = $(col).children().last();
 
       $(movieCard).append(
-        `<img src="${movies[eachRecord]["Poster"]}" class="mx-auto" alt="Cinque Terre" />`
+        `<img src="${src}" class="mx-auto" alt="Cinque Terre" />`
       );
       $(movieCard).append(`<p id="title">${movies[eachRecord]["Title"]}</p>`);
       $(movieCard).append(`<p id="year">${movies[eachRecord]["Year"]}</p>`);
