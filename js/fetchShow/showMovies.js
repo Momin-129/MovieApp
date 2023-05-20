@@ -1,5 +1,6 @@
 export function showMovies(data) {
   if (data.Response == "True") {
+    let url = window.location.href;
     let movies = data.Search;
     $("#mainContainer").html("");
     $("#mainContainer").append("<div class='row mt-5'>");
@@ -8,7 +9,7 @@ export function showMovies(data) {
     let src = "";
     for (let eachRecord in movies) {
       if (movies[eachRecord]["Poster"] == "N/A")
-        src = "../../images/default.png";
+        src = `${url}/images/default.png`;
       else src = movies[eachRecord]["Poster"];
 
       $(row).append('<div class="col-md-4 mt-5">');
