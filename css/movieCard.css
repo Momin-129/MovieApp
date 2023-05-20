@@ -8,6 +8,10 @@
   padding-bottom: 5px;
 }
 
+.movieCard img {
+  width: 15vw;
+}
+
 .movieCard #title {
   font-weight: bold;
   word-break: word-break;
@@ -32,5 +36,8 @@
     height: max-content;
     margin-bottom: 5vh;
     width: auto;
+  }
+  .movieCard img {
+    width: 100%;
   }
 }

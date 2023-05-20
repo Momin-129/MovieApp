@@ -20,14 +20,14 @@
 
     <div class="container mt-5">
       <div class="row" id="login">
-        <div class="col-md-4 bg-primary">
+        <div class="col-md-4" id="buttons">
           <button type="button" class="btn btn-light">Signin</button>
           <button type="button" class="btn btn-dark">Signup</button>
         </div>
         <div class="col-md-8" id="logSin">
           <div class="signForm">
             <h4>SignUp</h4>
-            <form id="logForm">
+            <form id="sigForm">
               <div class="mb-3 mt-3">
                 <label for="username" class="form-label">Username:</label>
                 <input
@@ -55,15 +55,17 @@
                   class="form-control"
                   id="pwd"
                   placeholder="Enter password"
-                  name="pswd"
+                  name="password"
                 />
               </div>
-              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="submit" id="register" class="btn btn-dark">
+                Register
+              </button>
             </form>
           </div>
           <div class="loginForm">
             <h4>SignIn</h4>
-            <form id="sigForm">
+            <form id="logForm">
               <div class="mb-3 mt-3">
                 <label for="username" class="form-label">Username:</label>
                 <input
@@ -81,10 +83,12 @@
                   class="form-control"
                   id="pwd"
                   placeholder="Enter password"
-                  name="pswd"
+                  name="password"
                 />
               </div>
-              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="submit" id="loginBtn" class="btn btn-dark">
+                Login
+              </button>
             </form>
           </div>
         </div>
@@ -92,5 +96,6 @@
     </div>
   </body>
   <script src="../js/header.js"></script>
-  <script src="../js/login.js"></script>
+  <script src="../js/loginRegister/login.js" type="module"></script>
+  <script src="../js/loginRegister/verification.js" type="module"></script>
 </html>

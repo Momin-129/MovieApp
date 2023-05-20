@@ -1,5 +1,5 @@
-import { fetchMovies } from "./fetchMovies.js";
-import { showMovies } from "./showMovies.js";
+import { fetchMovies } from "./fetchShow/fetchMovies.js";
+import { showMovies } from "./fetchShow/showMovies.js";
 
 let movieName = "";
 

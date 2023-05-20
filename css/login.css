@@ -8,7 +8,13 @@
   display: flex;
 }
 
+#login #buttons {
+  background-color: #008ee6;
+  box-shadow: 5px 5px 5px grey;
+}
+
 #login #logSin {
+  background-color: #008ee6;
   box-shadow: 5px 5px 5px grey;
 }
 
@@ -18,13 +24,23 @@
   margin-left: 5px;
 }
 
+#error {
+  font-size: 12px;
+  display: block;
+}
+
 .signForm {
   display: none;
 }
 
 @media only screen and (max-width: 600px) {
   #login .col-md-4 {
-    display: none;
+    height: max-content;
+    display: block;
+  }
+  #login .btn-light,
+  .btn-dark {
+    margin-top: 5px;
   }
   body {
     padding: 15px 15px;
