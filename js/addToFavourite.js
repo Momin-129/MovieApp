@@ -1,6 +1,6 @@
 let movieId = localStorage.getItem("id");
 let userId = parseInt(sessionStorage.getItem("sessionId")) - 1;
-let users = JSON.parse(localStorage.getItem("users"));
+let users = JSON.parse(localStorage.getItem("users")) ?? [];
 
 for (element in users[userId]) {
   if (element == "favourite") {

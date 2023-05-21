@@ -23,7 +23,7 @@ if (JSON.parse(localStorage.getItem("reviews"))) {
     }
   });
 } else {
-  $("#reviews").append("<h3 class='text-center'>No reviews yet...</h3>");
+  $("#reviewList").append("<h3 class='text-center'>No reviews yet...</h3>");
 }
 
 $("#logToAdd").on("click", () => {
@@ -59,5 +59,6 @@ function addReview() {
   review.review = userReview;
   reviews.push(review);
   localStorage.setItem("reviews", JSON.stringify(reviews));
-  window.location.href = "../html/movieDetails.html";
+  let url = window.location.href;
+  window.location.href = `${url}/html/movieDetails.html`;
 }

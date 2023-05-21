@@ -37,7 +37,7 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           </a>
         </li>
         <li class="nav-item" id="logout">
-          <a class="nav-link" href="">
+          <a class="nav-link">
             Logout
           </a>
         </li>
@@ -56,5 +56,5 @@ if (sessionStorage.getItem("sessionId") == null) {
 
 $("#logout").on("click", () => {
   sessionStorage.removeItem("sessionId");
-  window.location.href = "../index.html";
+  window.location.href = "/";
 });

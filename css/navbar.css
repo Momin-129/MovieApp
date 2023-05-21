@@ -11,3 +11,7 @@
 .navbar .navbar-nav > li > a:hover {
   color: grey;
 }
+
+.navbar #logout {
+  cursor: pointer;
+}

@@ -37,5 +37,7 @@ export function showMovies(data) {
 
 $(document).on("click", "#viewMore", (e) => {
   localStorage.setItem("id", e.target.value);
-  window.location.href = "../html/movieDetails.html";
+  let url = window.location.href;
+  console.log(url);
+  window.location.href = `${url}/html/movieDetails.html`;
 });
