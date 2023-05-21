@@ -1,5 +1,4 @@
 users = JSON.parse(localStorage.getItem("users"));
-let url = sessionStorage.getItem("url");
 // To check if user is loged in or not
 if (sessionStorage.getItem("sessionId") == null) {
   document.getElementById("addReview").style.display = "none";
@@ -27,6 +26,7 @@ if (JSON.parse(localStorage.getItem("reviews"))) {
 }
 
 $("#logToAdd").on("click", () => {
+  let url = sessionStorage.getItem("url");
   window.location.href = `${url}/html/login.html`;
 });
 
@@ -59,5 +59,6 @@ function addReview() {
   review.review = userReview;
   reviews.push(review);
   localStorage.setItem("reviews", JSON.stringify(reviews));
+  let url = sessionStorage.getItem("url");
   window.location.href = `${url}/html/movieDetails.html`;
 }

@@ -1,6 +1,7 @@
 import { fetchMovies } from "./fetchShow/fetchMovies.js";
 import { showMovies } from "./fetchShow/showMovies.js";
-sessionStorage.setItem("url", window.location.href);
+if (sessionStorage.getItem("url") == null)
+  sessionStorage.setItem("url", window.location.href);
 
 let movieName = "";
 

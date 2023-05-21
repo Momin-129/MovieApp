@@ -1,5 +1,3 @@
-let url = sessionStorage.getItem("url");
-
 export function showMovies(data) {
   if (data.Response == "True") {
     let movies = data.Search;
@@ -8,6 +6,7 @@ export function showMovies(data) {
     $("#mainContainer").append("</div>");
     let row = $("#mainContainer").children().last();
     let src = "";
+    let url = sessionStorage.getItem("url");
     for (let eachRecord in movies) {
       if (movies[eachRecord]["Poster"] == "N/A")
         src = `${url}/images/default.png`;
@@ -38,5 +37,6 @@ export function showMovies(data) {
 
 $(document).on("click", "#viewMore", (e) => {
   localStorage.setItem("id", e.target.value);
+  let url = sessionStorage.getItem("url");
   window.location.href = `${url}/html/movieDetails.html`;
 });
