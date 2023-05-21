@@ -29,7 +29,9 @@ export function showMovies(data) {
       );
     }
   } else {
-    $("#mainContainer").html("<b>No movie with this name...</b>");
+    $("#mainContainer").html(
+      "<h2 class='text-center'>No movie with this name...</h2>"
+    );
   }
 }
 

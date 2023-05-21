@@ -27,7 +27,7 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           </a>
         </li>
         <li class="nav-item" id="favouriteList">
-          <a class="nav-link"  href="#">
+          <a class="nav-link"  href="../html/favourites.html">
             Favourites
           </a>
         </li>

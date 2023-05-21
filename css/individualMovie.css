@@ -21,6 +21,10 @@
   width: 250px;
 }
 
+#removeFavourite {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .thumbnail {
     width: auto;
