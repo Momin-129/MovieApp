@@ -1,4 +1,4 @@
-import { Register } from "./registerLogin.js";
+import { Register, Login } from "./registerLogin.js";
 
 document.querySelector(".btn-light").addEventListener("click", () => {
   document.querySelector(".loginForm").style.display = "block";
@@ -13,4 +13,9 @@ document.querySelector(".btn-dark").addEventListener("click", () => {
 document.getElementById("register").addEventListener("click", (e) => {
   e.preventDefault();
   Register();
+});
+
+document.getElementById("loginBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  Login();
 });

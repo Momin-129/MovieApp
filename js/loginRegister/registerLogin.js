@@ -1,4 +1,5 @@
 import { submitData } from "./submitData.js";
+import { PopUp } from "../popUp.js";
 
 export function Register() {
   let users = JSON.parse(localStorage.getItem("users")) ?? [];
@@ -50,4 +51,28 @@ export function Register() {
     }
   }
   if (validName && validEmail && validPassword) submitData();
+}
+
+export function Login() {
+  let users = JSON.parse(localStorage.getItem("users")) ?? [];
+  let login = false;
+  let userId = 0;
+  let username = $("#username").val();
+  let password = $("#pwd").val();
+  users.forEach((element) => {
+    if (element.username == username && element.password == password) {
+      login = true;
+      userId = element.userId;
+      return;
+    }
+  });
+
+  if (login) {
+    sessionStorage.setItem("sessionId", userId);
+    window.location.href = "../../index.html";
+  } else {
+    let title = "Login Failed";
+    let content = "Invalid username or password.";
+    PopUp(title, content);
+  }
 }

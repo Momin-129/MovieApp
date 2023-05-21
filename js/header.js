@@ -31,9 +31,19 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             Favourites
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="signin">
           <a class="nav-link" href="../html/login.html">
             Signup/Signin
+          </a>
+        </li>
+        <li class="nav-item" id="profile">
+          <a class="nav-link" href="">
+             <i class="fa fa-user-circle"></i>
+          </a>
+        </li>
+        <li class="nav-item" id="logout">
+          <a class="nav-link" href="">
+            Logout
           </a>
         </li>
       </ul>
@@ -41,5 +51,10 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   </div>
 </nav>`);
 
-if (sessionStorage.getItem("sessionId") == null)
+if (sessionStorage.getItem("sessionId") == null) {
   document.getElementById("favouriteList").style.display = "none";
+  document.getElementById("logout").style.display = "none";
+  document.getElementById("profile").style.display = "none";
+} else {
+  document.getElementById("signin").style.display = "none";
+}
