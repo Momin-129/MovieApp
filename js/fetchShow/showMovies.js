@@ -1,6 +1,7 @@
+let url = sessionStorage.getItem("url");
+
 export function showMovies(data) {
   if (data.Response == "True") {
-    let url = window.location.href;
     let movies = data.Search;
     $("#mainContainer").html("");
     $("#mainContainer").append("<div class='row mt-5'>");
@@ -37,7 +38,5 @@ export function showMovies(data) {
 
 $(document).on("click", "#viewMore", (e) => {
   localStorage.setItem("id", e.target.value);
-  let url = window.location.href;
-  console.log(url);
   window.location.href = `${url}/html/movieDetails.html`;
 });

@@ -56,5 +56,6 @@ if (sessionStorage.getItem("sessionId") == null) {
 
 $("#logout").on("click", () => {
   sessionStorage.removeItem("sessionId");
-  window.location.href = "/";
+  let url = sessionStorage.getItem("url");
+  window.location.href = `${url}`;
 });

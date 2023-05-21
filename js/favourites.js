@@ -14,7 +14,7 @@ else {
     })
   );
 
-  let url = window.location.href;
+  let url = sessionStorage.getItem("url");
   $("#mainContainer").html("");
   $("#mainContainer").append("<div class='row mt-5'>");
   $("#mainContainer").append("</div>");
@@ -44,7 +44,7 @@ else {
 
 $(document).on("click", "#viewMore", (e) => {
   localStorage.setItem("id", e.target.value);
-  let url = window.location.href;
+  let url = sessionStorage.getItem("url");
   window.location.href = `${url}/html/movieDetails.html`;
 });
 
