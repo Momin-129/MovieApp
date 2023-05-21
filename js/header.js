@@ -37,7 +37,7 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           </a>
         </li>
         <li class="nav-item" id="profile">
-          <a class="nav-link" href="">
+          <a class="nav-link" href="../html/update.html">
              <i class="fa fa-user-circle"></i>
           </a>
         </li>
