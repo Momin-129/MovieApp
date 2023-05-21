@@ -1,10 +1,16 @@
 .thumbnail {
-  width: 20vw;
-  height: 40vh;
+  width: auto;
+  height: auto;
 }
 
 .thumbnail img {
+  width: 20vw;
+  height: 60vh;
   border-radius: 8px;
+}
+
+.thumbnail .btn {
+  display: block;
 }
 
 #info #mainHead {
@@ -25,8 +31,30 @@
   display: none;
 }
 
+.reviewBox {
+  width: 45vw;
+  height: max-content;
+  padding: 5px 5px;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviewBox .user {
+  font-weight: bold;
+}
+.reviewBox .content {
+  font-style: italic;
+}
+
 @media only screen and (max-width: 600px) {
-  .thumbnail {
+  .thumbnail img {
+    width: auto;
+    height: auto;
+  }
+  .reviewBox {
     width: auto;
     height: auto;
   }

@@ -2,7 +2,7 @@ import { fetchIndividual } from "./fetchIndividual.js";
 let id = localStorage.getItem("id");
 
 if (sessionStorage.getItem("sessionId") == null)
-  document.getElementById("favourite").style.display = "none";
+  document.getElementById("addFavourite").style.display = "none";
 
 fetchIndividual(id).then((data) => {
   showIndividual(data);

@@ -21,11 +21,6 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             Home
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            About
-          </a>
-        </li>
         <li class="nav-item" id="favouriteList">
           <a class="nav-link"  href="../html/favourites.html">
             Favourites
@@ -58,3 +53,8 @@ if (sessionStorage.getItem("sessionId") == null) {
 } else {
   document.getElementById("signin").style.display = "none";
 }
+
+$("#logout").on("click", () => {
+  sessionStorage.removeItem("sessionId");
+  window.location.href = "../index.html";
+});
