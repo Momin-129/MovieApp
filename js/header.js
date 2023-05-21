@@ -1,3 +1,4 @@
+let url = sessionStorage.getItem("url");
 $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
@@ -17,22 +18,22 @@ $("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     >
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../index.html">
+          <a class="nav-link" href="${url}">
             Home
           </a>
         </li>
         <li class="nav-item" id="favouriteList">
-          <a class="nav-link"  href="../html/favourites.html">
+          <a class="nav-link"  href="${url}/html/favourites.html">
             Favourites
           </a>
         </li>
         <li class="nav-item" id="signin">
-          <a class="nav-link" href="../html/login.html">
+          <a class="nav-link" href="${url}/html/login.html">
             Signup/Signin
           </a>
         </li>
         <li class="nav-item" id="profile">
-          <a class="nav-link" href="../html/update.html">
+          <a class="nav-link" href="${url}/html/update.html">
              <i class="fa fa-user-circle"></i>
           </a>
         </li>
