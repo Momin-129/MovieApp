@@ -28,5 +28,5 @@ export function submitData() {
   regForm.reset();
   let title = "Registration";
   let content = "Registration successfull you can login now.";
-  PopUp(title, content);
+  PopUp(title, content, "green");
 }

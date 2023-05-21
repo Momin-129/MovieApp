@@ -14,6 +14,9 @@
 
 .popup .title {
   font-weight: bold;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 5px;
 }
 
 .popup .btn {

@@ -1,4 +1,4 @@
-export function PopUp(title, content) {
+export function PopUp(title, content, color) {
   $("#popUp").append(`<div class="popup">
       <p class="title">${title}</p>
       <hr />
@@ -12,5 +12,6 @@ export function PopUp(title, content) {
       </button>
     </div>`);
 
+  $(".title").css("background-color", color);
   $(".popup").css("display", "block");
 }

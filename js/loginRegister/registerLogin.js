@@ -73,6 +73,6 @@ export function Login() {
   } else {
     let title = "Login Failed";
     let content = "Invalid username or password.";
-    PopUp(title, content);
+    PopUp(title, content, "red");
   }
 }

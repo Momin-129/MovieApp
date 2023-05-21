@@ -90,6 +90,6 @@ function Update() {
     localStorage.setItem("users", JSON.stringify(users));
     let title = "Updation";
     let content = "Details were updated.";
-    PopUp(title, content);
+    PopUp(title, content, "green");
   }
 }
