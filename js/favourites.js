@@ -3,6 +3,9 @@ let users = JSON.parse(localStorage.getItem("users"));
 let userId = parseInt(sessionStorage.getItem("sessionId")) - 1;
 let favourites = users[userId]["favourite"];
 let favList = [];
+let genre = [];
+
+// Get favourite movies of a user if any
 if (favourites.length == 0)
   $("body").append("<h2 class='text-center'>No Favourites...</h2>");
 else {
@@ -14,68 +17,105 @@ else {
     })
   );
 
+  // To display the favourite movies
   let url = sessionStorage.getItem("url");
   $("#mainContainer").html("");
-  $("#mainContainer").append("<div class='row mt-5'>");
-  $("#mainContainer").append("</div>");
-  let row = $("#mainContainer").children().last();
   let src = "";
 
-  for (let eachRecord of favList) {
-    if (eachRecord["Poster"] == "N/A") src = `${url}/images/default.png`;
-    else src = eachRecord["Poster"];
-    $(row).append('<div class="col-md-4 mt-5">');
-    $(row).append("</div>");
-    let col = $(row).children().last();
-    $(col).append('<div class="movieCard">');
-    $(col).append("</div>");
-    let movieCard = $(col).children().last();
+  for (let item of favList) {
+    const word = item["Genre"].split(",")[0];
+    if (genre.indexOf(word) === -1) {
+      genre.push(word);
+    }
+  }
 
-    $(movieCard).append(
-      `<img src="${src}" class="mx-auto" alt="Cinque Terre" />`
-    );
-    $(movieCard).append(`<p id="title">${eachRecord["Title"]}</p>`);
-    $(movieCard).append(`<p id="year">${eachRecord["Year"]}</p>`);
-    $(col).append(
-      `<button id="viewMore" class="btn mt-2" value="${eachRecord["imdbID"]}">View More Details</button>`
-    );
+  genre.forEach((item) => {
+    $("#genreOpitions").append(`<option value="${item}">${item}</option>`);
+  });
+
+  // genre.forEach((item) => {
+  //   $("#genreOpitions").append(`<option value="${item}">${item}</option>`);
+  //   $("#mainContainer").append(
+  //     `<div id="${item}" style="display:none;"><div class="row"></div></div>`
+  //   );
+  //   let row = $(`#${item}`).children().last();
+  //   for (let each of favList) {
+  //     let genre = each["Genre"].split(",")[0];
+  //     if (genre == item) {
+  //       if (each["Poster"] == "N/A") src = `${url}/images/default.png`;
+  //       else src = each["Poster"];
+  //       $(row).append(`
+  //       <div class="col-md-4" >
+  //         <div class="movieCard">
+  //          <img src="${src}" class="mx-auto" alt="Cinque Terre" />
+  //           <p id="title">${each["Title"]}</p>
+  //           <p id="year">${each["Year"]}</p>
+  //         </div>
+  //        <button id="viewMore" class="btn mt-2" value="${each["imdbID"]}">View More Details</button>
+  //       </div>
+  //         `);
+  //     }
+  //   }
+  // });
+  //
+
+  ShowAll();
+
+  // To view more info about movie
+  $(document).on("click", "#viewMore", (e) => {
+    localStorage.setItem("id", e.target.value);
+    let url = sessionStorage.getItem("url");
+    window.location.href = `${url}/html/movieDetails.html`;
+  });
+}
+
+function ShowAll() {
+  $("#mainContainer").html("");
+  $("#mainContainer").append(`<div class="row mt-5"></div>`);
+  let row = $("#mainContainer").children().last();
+  let src = "";
+  for (let each of favList) {
+    if (each["Poster"] == "N/A") src = `${url}/images/default.png`;
+    else src = each["Poster"];
+    $(row).append(`
+          <div class="col-md-4 mt-5" >
+            <div class="movieCard">
+             <img src="${src}" class="mx-auto" alt="Cinque Terre" />
+              <p id="title">${each["Title"]}</p>
+              <p id="year">${each["Year"]}</p>
+            </div>
+           <button id="viewMore" class="btn mt-2" value="${each["imdbID"]}">View More Details</button>
+          </div>
+            `);
   }
 }
 
-$(document).on("click", "#viewMore", (e) => {
-  localStorage.setItem("id", e.target.value);
-  let url = sessionStorage.getItem("url");
-  window.location.href = `${url}/html/movieDetails.html`;
-});
+$("#genreOpitions").on("change", (e) => {
+  let item = $(e.target).val();
+  if (item == "All") {
+    ShowAll();
+  } else {
+    $("#mainContainer").html("");
+    $("#mainContainer").append(`<div class="row mt-5"></div>`);
+    let row = $(`#mainContainer`).children().last();
+    let src = "";
 
-$("#search").on("keyup", (e) => {
-  let value = e.target.value;
-  let url = window.location.href;
-  $("#mainContainer").html("");
-  $("#mainContainer").append("<div class='row mt-5'>");
-  $("#mainContainer").append("</div>");
-  let row = $("#mainContainer").children().last();
-  let src = "";
-
-  for (let eachRecord of favList) {
-    if (eachRecord["Title"].toLowerCase().includes(value.toLowerCase())) {
-      if (eachRecord["Poster"] == "N/A") src = `${url}/images/default.png`;
-      else src = eachRecord["Poster"];
-      $(row).append('<div class="col-md-4 mt-5">');
-      $(row).append("</div>");
-      let col = $(row).children().last();
-      $(col).append('<div class="movieCard">');
-      $(col).append("</div>");
-      let movieCard = $(col).children().last();
-
-      $(movieCard).append(
-        `<img src="${src}" class="mx-auto" alt="Cinque Terre" />`
-      );
-      $(movieCard).append(`<p id="title">${eachRecord["Title"]}</p>`);
-      $(movieCard).append(`<p id="year">${eachRecord["Year"]}</p>`);
-      $(col).append(
-        `<button id="viewMore" class="btn mt-2" value="${eachRecord["imdbID"]}">View More Details</button>`
-      );
+    for (let each of favList) {
+      let genre = each["Genre"].split(",")[0];
+      if (genre == item) {
+        if (each["Poster"] == "N/A") src = `${url}/images/default.png`;
+        else src = each["Poster"];
+        $(row).append(`
+        <div class="col-md-4" >
+          <div class="movieCard">
+           <img src="${src}" class="mx-auto" alt="Cinque Terre" />
+            <p id="title">${each["Title"]}</p>
+            <p id="year">${each["Year"]}</p>
+          </div>
+         <button id="viewMore" class="btn mt-2" value="${each["imdbID"]}">View More Details</button>
+        </div>
+          `);
+      }
     }
   }
 });
