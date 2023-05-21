@@ -1,3 +1,5 @@
+import { PopUp } from "../popUp.js";
+
 export function submitData() {
   let users = JSON.parse(localStorage.getItem("users")) ?? [];
   let userId = 0;
@@ -24,4 +26,7 @@ export function submitData() {
   users.push(obj);
   localStorage.setItem("users", JSON.stringify(users));
   regForm.reset();
+  let title = "Registration";
+  let content = "Registration successfull you can login now.";
+  PopUp(title, content);
 }
