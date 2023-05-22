@@ -41,7 +41,6 @@ popularMovies = await Promise.all(
     });
   })
 );
-
 export function showPopularMovies() {
   $("#mainContainer").html("");
   $("#mainContainer").append(`<div class="row mt-5"></div>`);
@@ -49,10 +48,11 @@ export function showPopularMovies() {
   let src = "";
 
   for (let each of popularMovies) {
-    if (each["Poster"] == "N/A" || each["Poster"] == undefined)
-      src = `${url}/images/default.png`;
-    else src = each["Poster"];
-    $(row).append(`
+    if (each["Response"] == "True") {
+      if (each["Poster"] == "N/A" || each["Poster"] == undefined)
+        src = `${url}/images/default.png`;
+      else src = each["Poster"];
+      $(row).append(`
         <div class="col-md-4 mt-5" >
           <div class="movieCard">
            <img src="${src}" class="mx-auto" alt="Cinque Terre" />
@@ -62,5 +62,6 @@ export function showPopularMovies() {
          <button id="viewMore" class="btn mt-2" value="${each["imdbID"]}">View More Details</button>
         </div>
           `);
+    }
   }
 }
