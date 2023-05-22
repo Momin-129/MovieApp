@@ -18,9 +18,6 @@ else {
   );
 
   // To display the favourite movies
-  let url = sessionStorage.getItem("url");
-  $("#mainContainer").html("");
-  let src = "";
 
   for (let item of favList) {
     const word = item["Genre"].split(",")[0];
