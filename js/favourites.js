@@ -33,32 +33,6 @@ else {
     $("#genreOpitions").append(`<option value="${item}">${item}</option>`);
   });
 
-  // genre.forEach((item) => {
-  //   $("#genreOpitions").append(`<option value="${item}">${item}</option>`);
-  //   $("#mainContainer").append(
-  //     `<div id="${item}" style="display:none;"><div class="row"></div></div>`
-  //   );
-  //   let row = $(`#${item}`).children().last();
-  //   for (let each of favList) {
-  //     let genre = each["Genre"].split(",")[0];
-  //     if (genre == item) {
-  //       if (each["Poster"] == "N/A") src = `${url}/images/default.png`;
-  //       else src = each["Poster"];
-  //       $(row).append(`
-  //       <div class="col-md-4" >
-  //         <div class="movieCard">
-  //          <img src="${src}" class="mx-auto" alt="Cinque Terre" />
-  //           <p id="title">${each["Title"]}</p>
-  //           <p id="year">${each["Year"]}</p>
-  //         </div>
-  //        <button id="viewMore" class="btn mt-2" value="${each["imdbID"]}">View More Details</button>
-  //       </div>
-  //         `);
-  //     }
-  //   }
-  // });
-  //
-
   ShowAll();
 
   // To view more info about movie
