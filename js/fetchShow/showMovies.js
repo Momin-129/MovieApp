@@ -6,7 +6,7 @@ export function showMovies(data) {
     $("#mainContainer").append("</div>");
     let row = $("#mainContainer").children().last();
     let src = "";
-    let url = sessionStorage.getItem("url");
+    let url = localStorage.getItem("url");
     for (let eachRecord in movies) {
       if (movies[eachRecord]["Poster"] == "N/A")
         src = `${url}/images/default.png`;
@@ -37,6 +37,6 @@ export function showMovies(data) {
 
 $(document).on("click", "#viewMore", (e) => {
   localStorage.setItem("id", e.target.value);
-  let url = sessionStorage.getItem("url");
+  let url = localStorage.getItem("url");
   window.location.href = `${url}/html/movieDetails.html`;
 });

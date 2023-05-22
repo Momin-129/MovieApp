@@ -26,7 +26,7 @@ if (JSON.parse(localStorage.getItem("reviews"))) {
 }
 
 $("#logToAdd").on("click", () => {
-  let url = sessionStorage.getItem("url");
+  let url = localStorage.getItem("url");
   window.location.href = `${url}/html/login.html`;
 });
 
@@ -59,6 +59,6 @@ function addReview() {
   review.review = userReview;
   reviews.push(review);
   localStorage.setItem("reviews", JSON.stringify(reviews));
-  let url = sessionStorage.getItem("url");
+  let url = localStorage.getItem("url");
   window.location.href = `${url}/html/movieDetails.html`;
 }

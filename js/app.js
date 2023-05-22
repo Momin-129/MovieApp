@@ -3,8 +3,8 @@ import { showMovies } from "./fetchShow/showMovies.js";
 import { showPopularMovies } from "./popularMovies.js";
 import { showRecommended } from "./recommedations.js";
 
-if (sessionStorage.getItem("url") == null)
-  sessionStorage.setItem("url", window.location.href);
+if (localStorage.getItem("url") == null)
+  localStorage.setItem("url", window.location.href);
 
 let movieName = "";
 

@@ -43,7 +43,6 @@ popularMovies = await Promise.all(
 );
 
 export function showPopularMovies() {
-  console.log("in");
   $("#mainContainer").html("");
   $("#mainContainer").append(`<div class="row mt-5"></div>`);
   let row = $(`#mainContainer`).children().last();

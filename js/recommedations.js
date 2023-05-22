@@ -1,7 +1,6 @@
 //
 import { fetchIndividual } from "./fetchShow/fetchIndividual.js";
 import { fetchSimilar, fetchSimilarId } from "./fetchShow/fetchSimilar.js";
-import { showPopularMovies } from "./popularMovies.js";
 let users = JSON.parse(localStorage.getItem("users"));
 let userId = parseInt(sessionStorage.getItem("sessionId")) - 1;
 let favourites = [];

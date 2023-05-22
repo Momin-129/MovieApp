@@ -35,7 +35,7 @@ else {
   // To view more info about movie
   $(document).on("click", "#viewMore", (e) => {
     localStorage.setItem("id", e.target.value);
-    let url = sessionStorage.getItem("url");
+    let url = localStorage.getItem("url");
     window.location.href = `${url}/html/movieDetails.html`;
   });
 }

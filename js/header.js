@@ -1,4 +1,4 @@
-let url = sessionStorage.getItem("url");
+let url = localStorage.getItem("url");
 $("#header").append(`<nav class="navbar navbar-expand-sm  navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
@@ -57,6 +57,6 @@ if (sessionStorage.getItem("sessionId") == null) {
 
 $("#logout").on("click", () => {
   sessionStorage.removeItem("sessionId");
-  let url = sessionStorage.getItem("url");
+  let url = localStorage.getItem("url");
   window.location.href = `${url}`;
 });
