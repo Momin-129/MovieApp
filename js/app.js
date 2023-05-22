@@ -11,9 +11,13 @@ let movieName = "";
 // To Search for movies
 $("#search").on("keyup", (e) => {
   movieName = e.target.value;
-  fetchMovies(movieName).then((data) => {
-    showMovies(data);
-  });
+  if (movieName.length == 0) {
+    showPopularMovies();
+  } else {
+    fetchMovies(movieName).then((data) => {
+      showMovies(data);
+    });
+  }
 });
 // To Search for movies end
 
