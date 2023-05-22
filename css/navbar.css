@@ -1,3 +1,7 @@
+.navbar {
+  background-color: #00b33c;
+}
+
 .navbar .navbar-nav > li {
   margin-left: 2em;
   margin-right: 2em;
@@ -9,7 +13,7 @@
 }
 
 .navbar .navbar-nav > li > a:hover {
-  color: grey;
+  color: brown;
 }
 
 .navbar #logout {

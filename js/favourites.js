@@ -80,7 +80,7 @@ $("#genreOpitions").on("change", (e) => {
         if (each["Poster"] == "N/A") src = `${url}/images/default.png`;
         else src = each["Poster"];
         $(row).append(`
-        <div class="col-md-4" >
+        <div class="col-md-4 mt-5" >
           <div class="movieCard">
            <img src="${src}" class="mx-auto" alt="Cinque Terre" />
             <p id="title">${each["Title"]}</p>

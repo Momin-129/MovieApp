@@ -1,10 +1,11 @@
 .movieCard {
   height: 60vh;
+  color: black;
   width: min-content;
-  border: 2px solid grey;
+  border: 10px solid white;
   border-radius: 8px;
-  box-shadow: 5px 5px 5px grey;
   text-align: center;
+  background-color: white;
   padding-bottom: 5px;
 }
 
@@ -24,10 +25,18 @@
 }
 
 #viewMore {
-  border: 2px solid black;
+  display: block;
+  color: white;
+  /* border: 5px solid #004d1a; */
   border-radius: 3px;
-  box-shadow: 4px 4px 4px grey;
+  background-color: #004d1a;
   width: max-content;
+  margin: 0 45px;
+}
+#viewMore:hover {
+  font-weight: bold;
+  background-color: #8ccf9a;
+  color: #000000;
 }
 #popUp {
   display: block;

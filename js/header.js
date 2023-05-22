@@ -1,5 +1,5 @@
 let url = sessionStorage.getItem("url");
-$("#header").append(`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+$("#header").append(`<nav class="navbar navbar-expand-sm  navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       MovieApp
